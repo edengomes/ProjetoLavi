@@ -37,64 +37,13 @@ body {
 
 .container {
   perspective: 1000px;
-  width: 100vw;
-  height: 100vh;
-  max-width: 100vw;
-  max-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
-@media (max-width: 800px) {
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-    height: 100vh;
-    overflow-y: auto;
-  }
-
-  .carta {
-    width: 90vw;
-    min-height: auto;
-    max-height: 80vh;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 10px;
-    padding: 0;
-    font-size: 1rem;
-  }
-
-  .lado.dentro {
-    padding: 20px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-  }
-
-  .assinatura-envelope {
-    font-size: 1rem;
-  }
-
-  .envelope {
-    width: 90vw;
-    height: auto;
-  }
-
-  .envelope-body,
-  .envelope-flap {
-    width: 100%;
-  }
-}
-
 
 /* Envelope */
 .envelope {
   position: relative;
-  width: 420px; /* alterado de 340px */
-  height: 280px; /* aumente proporcionalmente se desejar */
+  width: 340px;
+  height: 240px;
   margin: 0 auto;
   cursor: pointer;
   perspective: 1000px;
@@ -105,10 +54,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 420px; /* alterado de 340px */
-  height: 140px; /* aumente proporcionalmente se desejar */
+  width: 340px;
+  height: 120px;
   background: #f9cfc3;
-  border-radius: 0 0 220px 220px/0 0 140px 140px; /* ajuste proporcional */
+  border-radius: 0 0 180px 180px/0 0 120px 120px;
   transform-origin: top center;
   transition: transform 1s cubic-bezier(.77,0,.18,1);
   z-index: 3;
@@ -117,16 +66,15 @@ body {
 
 .envelope-body {
   position: relative;
-  top: 70px; /* aumente proporcionalmente se desejar */
+  top: 60px;
   left: 0;
-  width: 420px; /* alterado de 340px */
-  height: 210px; /* aumente proporcionalmente se desejar */
+  width: 340px;
+  height: 180px;
   background: #f9cfc3;
-  border-radius: 0 0 14px 14px;
+  border-radius: 0 0 12px 12px;
   z-index: 2;
   border: 1px solid #e0cfcf;
 }
-
 .assinatura-envelope {
     position: absolute;
     bottom: 10px;
@@ -167,11 +115,11 @@ body {
 
 .carta {
     position: absolute;
-    top: -230px; /* ajuste se necessário */
+    top: -250px; /* alterado de 30px para 10px */
     left: 50%;
     transform: translateX(-50%) scaleY(0);
-    width: 400px; /* alterado de 320px */
-    min-height: 600px; /* aumente proporcionalmente se desejar */
+    width: 320px;
+    min-height: 520px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -198,4 +146,18 @@ body {
   background-size: 100% 24px;
   height: 100%;
   box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .carta {
+    width: 95vw;
+    min-width: 0;
+    max-width: 98vw;
+    min-height: 60vh;
+    padding: 0;
+  }
+  .lado.dentro {
+    padding: 12px;
+    font-size: 15px;
+  }
 }
